@@ -1,24 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Rocket } from "./Rocket";
 
 export const RocketList = () => {
+  const [apiData, setApiData] = useState([]);
+  useEffect(() => {
+    fetch("https://api.spaceXdata.com/v3/launches?limit=100")
+      .then((data) => data.json())
+      .then(setApiData)
+      .catch(console.error);
+  }, []);
   return (
     <>
-      <div className="col-10">
-        <div className="card">
-          <div className="card-body bg-white">
-            <div className="">img here</div>
-            <h3>FalconSat#1</h3>
-            <h3>Mission Ids:</h3>
-            <ul>
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-            </ul>
-            <h3>LaunchYear: 2006</h3>
-            <h3>LaunchYear: 2006</h3>
-            <h3>LaunchYear: 2006</h3>
-          </div>
-        </div>
+      <div className="col-10 d-flex align-items-start flex-wrap">
+        <Rocket />
+        <Rocket />
+        <Rocket />
+        <Rocket />
+        <Rocket />
+        <Rocket />
+        <Rocket />
+        <Rocket />
+        <Rocket />
+        <Rocket />
+        <Rocket />
       </div>
     </>
   );

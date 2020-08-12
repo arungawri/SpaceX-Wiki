@@ -8,7 +8,7 @@ export const Navbar = () => {
         <div className="card-body bg-white">
           <h3>Filters</h3>
           <h3 className="font-weight-light text-center">Launch Year</h3>
-          <div class="d-flex flex-row flex-wrap justify-content-between">
+          <div className="d-flex flex-row flex-wrap justify-content-between">
             <button className="btn btn-success mx-3">2006</button>
             <button className="btn btn-success mx-3">2006</button>
             <button className="btn btn-success mx-3">2006</button>
