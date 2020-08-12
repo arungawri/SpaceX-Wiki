@@ -11,18 +11,20 @@ export const RocketList = () => {
   }, []);
   return (
     <>
-      <div className="col-10 d-flex align-items-start flex-wrap">
-        <Rocket />
-        <Rocket />
-        <Rocket />
-        <Rocket />
-        <Rocket />
-        <Rocket />
-        <Rocket />
-        <Rocket />
-        <Rocket />
-        <Rocket />
-        <Rocket />
+      <div className="col-10">
+        <div className="row d-flex align-items-start flex-wrap">
+          {apiData.map((rocket) => (
+            <Rocket
+              key={rocket.flight_number}
+              img_patch_small={rocket.links.mission_patch_small}
+              rocket_name={rocket.rocket_name}
+              mission_id={rocket.mission_id}
+              launch_year={rocket.launch_year}
+              launch_success={rocket.launch_success}
+              land_success={rocket.land_success}
+            />
+          ))}
+        </div>
       </div>
     </>
   );
