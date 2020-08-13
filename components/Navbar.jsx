@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { Formik, Field } from "formik";
-import { useInput } from "./hooks/useInput";
+
 import { ButtonGroup, ToggleButton } from "react-bootstrap";
 
-export const Navbar = () => {
+export const Navbar = ({
+  yearValue,
+  setYearValue,
+  successfulLaunch,
+  setSuccessfulLaunch,
+  successfulLanding,
+  setSuccessfulLanding,
+}) => {
   const years = [
     "2006",
     "2007",
@@ -21,9 +28,6 @@ export const Navbar = () => {
     "2019",
     "2020",
   ];
-  const [yearValue, setYearValue] = useInput("");
-  const [successfulLaunch, setSuccessfulLaunch] = useInput("");
-  const [successfulLanding, setSuccessfulLanding] = useInput("");
 
   return (
     <div className="col-lg-2">

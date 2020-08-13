@@ -1,14 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Rocket } from "./Rocket";
 
-export const RocketList = () => {
-  const [apiData, setApiData] = useState([]);
-  useEffect(() => {
-    fetch("https://api.spaceXdata.com/v3/launches?limit=100")
-      .then((data) => data.json())
-      .then(setApiData)
-      .catch(console.error);
-  }, []);
+export const RocketList = ({ apiData }) => {
   return (
     <>
       <div className="col-10">
@@ -17,7 +10,8 @@ export const RocketList = () => {
             <Rocket
               key={rocket.flight_number}
               img_patch_small={rocket.links.mission_patch_small}
-              rocket_name={rocket.rocket_name}
+              rocket_name={rocket.mission_name}
+              flight_number={rocket.flight_number}
               mission_id={rocket.mission_id}
               launch_year={rocket.launch_year}
               launch_success={rocket.launch_success}
