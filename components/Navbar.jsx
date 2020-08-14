@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Formik, Field } from "formik";
 
 import { ButtonGroup, ToggleButton } from "react-bootstrap";
-
 export const Navbar = ({
   yearValue,
   setYearValue,
@@ -31,11 +30,10 @@ export const Navbar = ({
 
   return (
     <div className="col-lg-2">
-      <h3>SpaceX Launch Programs</h3>
       <div className="card">
         <div className="card-body bg-white">
           <h3>Filters</h3>
-          <h3 className="font-weight-light text-center">Launch Year</h3>
+          <p className="text-center">Launch Year</p>
           <ButtonGroup toggle className="row">
             {years.map((year) => (
               <React.Fragment key={year}>
@@ -54,58 +52,62 @@ export const Navbar = ({
               </React.Fragment>
             ))}
           </ButtonGroup>
-          <h3 className="font-weight-light text-center">Successful Launch</h3>
-          <ButtonGroup toggle className="row justify-content-between">
-            <ToggleButton
-              className="mr-3"
-              type="radio"
-              id="successfulLaunchTrue"
-              value="true"
-              variant="success"
-              name="successfulLaunch"
-              checked={successfulLaunch === "true"}
-              onChange={setSuccessfulLaunch}
-            >
-              True
-            </ToggleButton>
-            <ToggleButton
-              type="radio"
-              id="successfulLaunchFalse"
-              value="false"
-              variant="success"
-              name="successfulLaunch"
-              checked={successfulLaunch == "false"}
-              onChange={setSuccessfulLaunch}
-            >
-              False
-            </ToggleButton>
-          </ButtonGroup>
-          <h3 className="font-weight-light text-center">Successful Landing</h3>
-          <ButtonGroup toggle className="row justify-content-between">
-            <ToggleButton
-              className="mr-3"
-              type="radio"
-              id="successfulLandingTrue"
-              value="true"
-              variant="success"
-              name="successfulLanding"
-              checked={successfulLanding === "true"}
-              onChange={setSuccessfulLanding}
-            >
-              True
-            </ToggleButton>
-            <ToggleButton
-              type="radio"
-              id="successfulLandingFalse"
-              value="false"
-              variant="success"
-              name="successfulLanding"
-              checked={successfulLanding === "false"}
-              onChange={setSuccessfulLanding}
-            >
-              False
-            </ToggleButton>
-          </ButtonGroup>
+          <p className="text-center mt-4">Successful Launch</p>
+          <div className="text-center">
+            <ButtonGroup toggle className="row justify-content-between ">
+              <ToggleButton
+                className="mr-3"
+                type="radio"
+                id="successfulLaunchTrue"
+                value="true"
+                variant="success"
+                name="successfulLaunch"
+                checked={successfulLaunch === "true"}
+                onChange={setSuccessfulLaunch}
+              >
+                True
+              </ToggleButton>
+              <ToggleButton
+                type="radio"
+                id="successfulLaunchFalse"
+                value="false"
+                variant="success"
+                name="successfulLaunch"
+                checked={successfulLaunch == "false"}
+                onChange={setSuccessfulLaunch}
+              >
+                False
+              </ToggleButton>
+            </ButtonGroup>
+          </div>
+          <p className="mt-4 text-center">Successful Landing</p>
+          <div className="text-center">
+            <ButtonGroup toggle className="row justify-content-between ">
+              <ToggleButton
+                className="mr-3"
+                type="radio"
+                id="successfulLandingTrue"
+                value="true"
+                variant="success"
+                name="successfulLanding"
+                checked={successfulLanding === "true"}
+                onChange={setSuccessfulLanding}
+              >
+                True
+              </ToggleButton>
+              <ToggleButton
+                type="radio"
+                id="successfulLandingFalse"
+                value="false"
+                variant="success"
+                name="successfulLanding"
+                checked={successfulLanding === "false"}
+                onChange={setSuccessfulLanding}
+              >
+                False
+              </ToggleButton>
+            </ButtonGroup>
+          </div>
         </div>
       </div>
     </div>

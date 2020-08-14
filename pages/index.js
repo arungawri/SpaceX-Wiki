@@ -40,6 +40,11 @@ export default function Home() {
 
   return (
     <div className="container bg-light">
+      <div className="row">
+        <div className="col-12">
+          <h3>SpaceX Launch Programs</h3>
+        </div>
+      </div>
       <div className="row justify-content-center">
         <Navbar
           yearValue={yearValue}
