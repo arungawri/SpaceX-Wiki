@@ -57,6 +57,11 @@ export default function Home() {
         <h1>{loading}</h1>
         <RocketList apiData={apiData} />
       </div>
+      <div className="row justify-content-centre">
+        <div className="col-12 text-center">
+          <h3>Developed By: Arun Gawri</h3>
+        </div>
+      </div>
     </div>
   );
 }
