@@ -10,7 +10,7 @@ export const Rocket = ({
   flight_number,
 }) => {
   return (
-    <div className="col-3">
+    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3">
       <div className="card my-1">
         <div className="card-body bg-white">
           <img src={img_patch_small} width="150" height="150" />
